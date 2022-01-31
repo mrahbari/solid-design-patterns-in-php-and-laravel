@@ -18,3 +18,5 @@ SOLID Principles coded in PHP scripting language.
 ## 5. Dependency inversion
     - high level objects should not depend on low level implementations. Both should depend on abstractions.
     - abstractions should not depend on details. Details should depend on abstractions.
+
+
