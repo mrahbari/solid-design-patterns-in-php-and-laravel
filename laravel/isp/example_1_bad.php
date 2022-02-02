@@ -1,6 +1,6 @@
 <?php
 
-// Base WebPage with 6 concrete methods. 
+// Base WebPage with 6 concrete methods. [Interface segregation]
 class WebPage {
     public function currentUrl(){}
     public function setUrl(string $url){}
@@ -19,7 +19,7 @@ class VisitCommand {
 
     public function start() {
 	$this->page->setUrl($this->url);
-    } 
+    }
 }
 
 // A WebPage interface would force the implementation of all six methods, which would still limit client's flexibility.

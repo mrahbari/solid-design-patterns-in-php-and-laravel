@@ -1,19 +1,24 @@
 <?php
 
-class ReusableCopier{
-    public function __construct(Reader $reader, Writer $writer) {
-	$this->reader = $reader;
-	$this->writer = $writer;
+class ReusableCopier
+{
+    public function __construct(Reader $reader, Writer $writer)
+    {
+        $this->reader = $reader;
+        $this->writer = $writer;
     }
 
-    public function copy() {
-	$this->writer->write($this->reader->readUntillEOF());
+    public function copy()
+    {
+        $this->writer->write($this->reader->readUntillEOF());
     }
 }
 
-class StaticCopier{
-    public static function copy(Reader $reader, Writer $writer) {
-	$witer->writer($reader->readUntillEOF());
+class StaticCopier
+{
+    public static function copy(Reader $reader, Writer $writer)
+    {
+        $witer->writer($reader->readUntillEOF());
     }
 }
 
@@ -27,7 +32,7 @@ $copier->copy();
 $copier = new ReusableCopier(new KeyboardReader(), new NetworkPrinter());
 $copier->copy();
 
-// StaticCopier doesn't allow for dependency injection, but may be useful when a 
+// StaticCopier doesn't allow for dependency injection, but may be useful when a
 // simple implementation is required.
 // Not recommended when following SOLID as dependency injection is a core concept.
-StaticCopier::copy(new KeyboardReader(), new Printer())
+StaticCopier::copy(new KeyboardReader(), new Printer());

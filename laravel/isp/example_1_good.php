@@ -11,7 +11,7 @@ interface HasMessages {
     function consoleMessages();
     function alertMessages();
     function confirmMessages();
-    function promptMesasges();
+    function promptMessages();
 }
 
 // WebPage implements both interfaces.
@@ -21,7 +21,7 @@ class WebPage implements HasUrl, HasMessages {
     public function consoleMessages(){}
     public function alertMessages(){}
     public function confirmMessages(){}
-    public function promptMesasges(){}
+    public function promptMessages(){}
 }
 
 // VisitCommand now depends only on interfaces that satifies it's needs.
@@ -34,5 +34,5 @@ class VisitCommand {
 
     public function start() {
 	$this->page->setUrl($this->url);
-    } 
+    }
 }
